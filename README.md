@@ -1,14 +1,35 @@
-# Welcome to your CDK TypeScript project
+# AWS migration infrastructure
 
-This is a blank project for CDK development with TypeScript.
+In this project, I will create a IaC project for a patient portal web application that needs to be modernized and migrated to Infrastructure as Code, considering the current situation and what they require for their new infrastructure.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Requirements
+Infrastructure Migration to CDK
+Implement the following using AWS CDK with TypeScript:
 
-## Useful commands
+VPC with 2 Availability Zones
+1 public subnet per AZ
+1 private subnet per AZ
+Security Groups for EC2 and RDS
+EC2 instance in public subnet
+RDS instance in private subnet
+Necessary IAM roles and policies
+Demonstrate:
+Successful EC2 to RDS connectivity
+Security group configurations working as intended
+Network isolation is properly configured
+Infrastructure can be destroyed and recreated consistently
+Cost Considerations
+Use t2.micro for EC2 as this is free tier
+Use db.t3.micro for RDS for minimum cost
+Avoid NAT Gateways to save cots
+Destroy resources after testing
+Network Design:
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+Separate public and private subnets
+Security group with least privilege access
+Security:
+
+No direct public access to RDS
+EC2 instance only accessible via SSH from your IP
+Database credentials stored securely
+Use of security groups instead of NACLs where possible
