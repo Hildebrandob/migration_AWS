@@ -7,29 +7,51 @@ Infrastructure Migration to CDK
 Implement the following using AWS CDK with TypeScript:
 
 VPC with 2 Availability Zones
+
 1 public subnet per AZ
+
 1 private subnet per AZ
+
 Security Groups for EC2 and RDS
+
 EC2 instance in public subnet
+
 RDS instance in private subnet
+
 Necessary IAM roles and policies
-Demonstrate:
+
+## Demonstrate:
+
 Successful EC2 to RDS connectivity
+
 Security group configurations working as intended
+
 Network isolation is properly configured
+
 Infrastructure can be destroyed and recreated consistently
+
 Cost Considerations
+
 Use t2.micro for EC2 as this is free tier
+
 Use db.t3.micro for RDS for minimum cost
+
 Avoid NAT Gateways to save cots
+
 Destroy resources after testing
-Network Design:
+
+## Network Design:
 
 Separate public and private subnets
+
 Security group with least privilege access
-Security:
+
+## Security:
 
 No direct public access to RDS
+
 EC2 instance only accessible via SSH from your IP
+
 Database credentials stored securely
+
 Use of security groups instead of NACLs where possible
