@@ -4,6 +4,8 @@ In this project, I will create a IaC project for a patient portal web applicatio
 
 Lib folder contains all the the required infrastucture including: VPC stack, security policies stack and the stack the creates the EC2 intances, Bastion hosts, RDS databases annd secrets Manager policies
 
+[Project descrption in Medium](https://medium.com/@brandi_lon/aws-migration-infrastructure-b9b1ba69b63a)
+
 ## Requirements
 Infrastructure Migration to CDK
 Implement the following using AWS CDK with TypeScript:
